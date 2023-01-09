@@ -22,42 +22,27 @@ public class Task {
         this.priority = priority;
     }
 
-    boolean highPriority() {
-        return priority > 0;
+    String getPriority() {
+        if (priority > 0) {
+            return "Wysoki";
+        } else if (priority == 0) {
+            return "Normalny";
+        } else return "Niski";
     }
 
-    boolean mediumPriority() {
-        return priority == 0;
-    }
-
-    boolean lowPriority() {
-        return priority < 0;
-    }
-
-    String getTaskDescription() {
-        return "Kind of task: " + name + ". Task description: " + description
-                + ". Priority: " + priority + ". Person responsible: " + person.name + " " + person.surname;
-    }
-
-    String getTaskDescWitoutPerson() {
-        return "Kind of task: " + name + ". Task description: " + description
-                + ". Priority: " + priority;
-    }
-
-    String getTaskDescWitoutPersonAndPriority() {
-        return "Kind of task: " + name + ". Task description: " + description + "\n";
-    }
-
-    public void showTaskPriority() {
-        if (priority > 0)
-            System.out.println("Kind of priority: High");
-        else if (priority == 0)
-            System.out.println("Kind of priority: Normal");
-        else
-            System.out.println("Kind of priority: Low");
-        System.out.println("");
-        {
-
-        }
+    void showTaskDescription() {
+        if (person == null) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description
+                    + ". Priority: " + getPriority());
+        } else if (priority == 0) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description +
+                    ". Person responsible: " + person.name + " " + person.surname);
+        } else if (person == null && priority == 0) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description);
+        } else
+            System.out.println("Kind of task: " + name + ". Task description: " + description
+                    + ". Priority: " + getPriority() + ". Person responsible: " + person.name + " " + person.surname);
     }
 }
+
+
