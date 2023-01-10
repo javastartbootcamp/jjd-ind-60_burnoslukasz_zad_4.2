@@ -9,7 +9,7 @@ public class Main {
         Task task2 = new Task("Cooking", "Making dinner", 1, (new Person("Anna", "Burns")));
         task2.showTaskDescription();
 
-        Task task3 = new Task("Vaccuming", "Basement/Atic Vaccuming", 0);
+        Task task3 = new Task("Vaccuming", "Basement/Atic Vaccuming", 1);
         task3.showTaskDescription();
     }
 }
