@@ -14,7 +14,6 @@ public class Task {
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.priority = priority;
     }
 
     public Task(String name, String description, int priority) {
@@ -30,23 +29,24 @@ public class Task {
         } else {
             return "Niski";
         }
+    }
 
-        void showTaskDescription() {
-            if (person == null) {
-                System.out.println("Kind of task: " + name + ". Task description: " + description
-                        + ". Priority: " + getPriority());
-            } else if (priority == 0) {
-                System.out.println("Kind of task: " + name + ". Task description: " + description +
-                        ". Person responsible: " + person.name + " " + person.surname);
-            } else if (person == null && priority == 0) {
-                System.out.println("Kind of task: " + name + ". Task description: " + description);
-            } else {
-                System.out.println("Kind of task: " + name + ". Task description: " + description
-                        + ". Priority: " + getPriority() + ". Person responsible: " + person.name + " " + person.surname);
-            }
+    void showTaskDescription() {
+        if (person == null) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description
+                    + ". Priority: " + getPriority());
+        } else if (priority == 0) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description +
+                    ". Person responsible: " + person.name + " " + person.surname);
+        } else if (person == null && priority == 0) {
+            System.out.println("Kind of task: " + name + ". Task description: " + description);
+        } else {
+            System.out.println("Kind of task: " + name + ". Task description: " + description
+                    + ". Priority: " + getPriority() + ". Person responsible: " + person.name + " " + person.surname);
         }
     }
 }
+
 
 
 
